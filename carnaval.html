@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnavaaaal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100px;
+        }
+        .like {
+            background-color: green;
+            color: white;
+        }
+        .dislike {
+            background-color: red;
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button like" onclick="showMessage('like')">Like</button>
+        <img src="/app_carnaval/fotocarnaval.jpg" alt="Imagem Central">
+        <button class="button dislike" onclick="showMessage('dislike')">Dislike</button>
+    </div>
+    <p id="message"></p>
+
+    <script>
+        function showMessage(type) {
+            const message = document.getElementById("message");
+            if (type === "like") {
+                message.innerText = "Bora se beijar";
+            } else {
+                message.innerText = "Tem certeza?";
+            }
+        }
+    </script>
+</body>
+</html>
