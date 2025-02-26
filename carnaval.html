@@ -38,7 +38,7 @@
         }
         img {
             max-width: 100%;
-            height: auto;
+            height: 200px;
         }
         #message {
             margin-top: 20px;
@@ -48,10 +48,11 @@
     </style>
 </head>
 <body>
+    <h1>Tinder da shopeee</h1>
     <div class="container">
-        <button class="button like" onclick="showMessage('like')">Like</button>
-        <img src="/app_carnaval/fotocarnaval.jpg" alt="Imagem Central">
-        <button class="button dislike" onclick="showMessage('dislike')">Dislike</button>
+        <button class="button dislike" onclick="showMessage('dislike')">Dislike 👎</button>
+        <img src="fotocarnaval.jpeg" alt="Imagem Central">
+        <button class="button like" onclick="showMessage('like')">Like 👍</button>
     </div>
     <p id="message"></p>
 
@@ -59,9 +60,9 @@
         function showMessage(type) {
             const message = document.getElementById("message");
             if (type === "like") {
-                message.innerText = "Bora se beijar";
+                message.innerText = "Bora se beijar !!";
             } else {
-                message.innerText = "Tem certeza?";
+                message.innerText = "Tem certeza? 😭";
             }
         }
     </script>
