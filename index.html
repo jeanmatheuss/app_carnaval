@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnavaaaal</title>
+    <title>Like ou Dislike</title>
     <style>
         body {
             display: flex;
@@ -13,12 +13,18 @@
             flex-direction: column;
             font-family: Arial, sans-serif;
             text-align: center;
+            overflow: hidden;
         }
         .container {
             display: flex;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px solid black;
+            padding: 20px;
+            position: relative;
         }
         .button {
             padding: 10px 20px;
@@ -27,14 +33,17 @@
             font-size: 18px;
             border-radius: 5px;
             width: 100px;
+            position: absolute;
         }
         .like {
             background-color: green;
             color: white;
+            left: 30%;
         }
         .dislike {
             background-color: red;
             color: white;
+            right: 30%;
         }
         img {
             max-width: 100%;
@@ -48,11 +57,11 @@
     </style>
 </head>
 <body>
-    <h1>Tinder da shopeee</h1>
     <div class="container">
-        <button class="button dislike" onclick="showMessage('dislike')">Dislike 👎</button>
-        <img src="fotocarnaval.jpeg" alt="Imagem Central">
+        
         <button class="button like" onclick="showMessage('like')">Like 👍</button>
+        <img src="fotocarnaval.jpeg" alt="Imagem Central">
+        <button class="button dislike" onclick="showMessage('dislike')" onmouseover="moveButton()">Dislike 👎</button>
     </div>
     <p id="message"></p>
 
@@ -60,10 +69,21 @@
         function showMessage(type) {
             const message = document.getElementById("message");
             if (type === "like") {
-                message.innerText = "Bora se beijar !!";
+                message.innerText = "Bora se beijar";
             } else {
-                message.innerText = "Tem certeza? 😭";
+                message.innerText = "Tem certeza?";
             }
+        }
+
+        function moveButton() {
+            const button = document.querySelector(".dislike");
+            const container = document.querySelector(".container");
+            const maxX = container.clientWidth - button.clientWidth;
+            const maxY = container.clientHeight - button.clientHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
         }
     </script>
 </body>
